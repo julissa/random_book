@@ -1,9 +1,5 @@
-require 'CSV'
+books_array = []
 
-book_array = []
+File.open('books.txt').each_line{ |line| books_array << line }
 
-CSV.foreach('books.csv') do |row|
-  book_array << row
-end
-
-puts book_array.sample
+puts books_array.sample
